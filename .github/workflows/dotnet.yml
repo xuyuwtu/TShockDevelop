@@ -1,0 +1,32 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: .NET
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 6.0.x
+        
+    - name: Pack
+      run: dotnet pack TShock.Plugin.ProjectTemplates/TShock.Plugin.ProjectTemplates.csproj
+      
+    - name: Upload
+      uses: actions/upload-artifact@v4.4.3
+      with:
+        path: |
+          TShock.Plugin.ProjectTemplates/TShock.Plugin.ProjectTemplates.*.nupkg
+          CodeSnippet/
+    
