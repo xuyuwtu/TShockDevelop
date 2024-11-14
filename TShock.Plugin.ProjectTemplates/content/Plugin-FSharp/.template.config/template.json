@@ -1,0 +1,195 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Xuyuwtu",
+    "classifications": [
+        "Common",
+        "Library",
+        "TShock"
+    ],
+    "name": "TShock Plugin",
+    "generatorVersions": "[1.0.0.0-*)",
+    "shortName": "tsplugin",
+    "identity": "TShock.Plugin.FSharp",
+    "precedence": "12000",
+    "groupIdentity": "TShock.Plugin",
+    "preferNameDirectory": true,
+    "sourceName": "TShock.Plugin",
+    "tags": {
+        "language": "F#",
+        "type": "project"
+    },
+    "symbols": {
+        "TargetFrameworkOverride": {
+            "type": "parameter",
+            "description": "Overrides the target framework",
+            "replaces": "TargetFrameworkOverride",
+            "datatype": "string",
+            "defaultValue": "",
+            "displayName": "Target framework override"
+        },
+        "Framework": {
+            "type": "parameter",
+            "description": "The target framework for the project.",
+            "datatype": "choice",
+            "choices": [
+                {
+                    "choice": "net6.0",
+                    "description": "Target net6.0",
+                    "displayName": ".NET 6.0"
+                }
+            ],
+            "replaces": "net6.0",
+            "defaultValue": "net6.0",
+            "displayName": "Framework"
+        },
+        "skipRestore": {
+            "type": "parameter",
+            "datatype": "bool",
+            "description": "If specified, skips the automatic restore of the project on create.",
+            "defaultValue": "false",
+            "displayName": "Skip restore"
+        },
+        "TShockVersion": {
+            "type": "parameter",
+            "datatype": "choice",
+            "choices": [
+                {
+                    "choice": "5.2.0"
+                }
+            ],
+            "defaultValue": "5.2.0",
+            "replaces": "$(TShockVersion)",
+            "displayName": "TShock Version"
+        },
+        "pluginName": {
+            "type": "derived",
+            "valueSource": "name",
+            "valueTransform": "title",
+            "fileRename": "PluginProject",
+            "replaces": "Plugin.Namespace"
+        },
+        "GeneratedClassName": {
+            "type": "parameter",
+            "datatype": "choice",
+            "choices": [
+                {
+                    "choice": "Plugin",
+                    "displayName": "Plugin"
+                },
+                {
+                    "choice": "ProjectNameLast",
+                    "displayName": "ProjectNameLast",
+                    "description": "The last one separated by dots."
+                }
+            ],
+            "defaultValue": "Plugin",
+            "displayName": "Generated class name"
+        },
+        "pluginClassName": {
+            "type": "generated",
+            "generator": "regex",
+            "datatype": "text",
+            "parameters": {
+                "source": "pluginName",
+                "steps": [
+                    {
+                        "regex": ".*\\.(.*?)$",
+                        "replacement": "$1"
+                    }
+                ]
+            },
+            "fileRename": "RegexPluginClass",
+            "replaces": "Plugin.ClassName"
+        },
+        "IncludeGitIgnoreFile": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "displayName": "Include GitIgnore File",
+            "description": "Include a .gitignore file."
+        }
+    },
+    "forms": {
+        "title": {
+            "identifier": "titleCase"
+        }
+    },
+    "sources": [
+        {
+            "include": [
+                "PluginProject.fsproj"
+            ]
+        },
+        {
+            "condition": "(GeneratedClassName == 'Plugin')",
+            "include": [
+                "PluginClass.fs"
+            ],
+            "rename": {
+                "PluginClass.fs": "Plugin.fs"
+            }
+        },
+        {
+            "condition": "(GeneratedClassName == 'ProjectNameLast')",
+            "include": [
+                "RegexPluginClass.fs"
+            ]
+        },
+        {
+            "condition": "(IncludeGitIgnoreFile)",
+            "include": [
+                ".gitignore"
+            ]
+        }
+    ],
+    "primaryOutputs": [
+        {
+            "path": "PluginProject.fsproj"
+        },
+        {
+            "condition": "(GeneratedClassName == 'Plugin')",
+            "path": "PluginClass.fs"
+        },
+        {
+            "condition": "(GeneratedClassName == 'ProjectNameLast')",
+            "path": "RegexPluginClass.fs"
+        }
+    ],
+    "defaultName": "MyPlugin1",
+    "postActions": [
+        {
+            "id": "restore",
+            "condition": "(!skipRestore)",
+            "description": "Restore NuGet packages required by this project.",
+            "manualInstructions": [
+                {
+                    "text": "Run 'dotnet restore'"
+                }
+            ],
+            "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
+            "continueOnError": true
+        },
+        {
+            "id": "open-plugin-file",
+            "condition": "(GeneratedClassName == 'Plugin')",
+            "description": "Opens Plugin.fs in the editor",
+            "manualInstructions": [],
+            "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
+            "args": {
+                "files": "1"
+            },
+            "continueOnError": true
+        },
+        {
+            "id": "open-regex-plugin-file",
+            "condition": "(GeneratedClassName == 'ProjectNameLast')",
+            "description": "Opens plugin class file in the editor",
+            "manualInstructions": [],
+            "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
+            "args": {
+                "files": "1"
+            },
+            "continueOnError": true
+        }
+    ]
+}

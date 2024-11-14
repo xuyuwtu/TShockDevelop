@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <IncludeBuildOutput>False</IncludeBuildOutput>
+        <IncludeSource>False</IncludeSource>
+        <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+        <OutputPath>$(MSBuildThisFileDirectory)</OutputPath>
+        <EnableDefaultItems>False</EnableDefaultItems>
+        <UsingToolTemplateLocalizer>true</UsingToolTemplateLocalizer>
+        <IsPackable>true</IsPackable>
+        <IsShipping>true</IsShipping>
+        <IsShippingPackage>true</IsShippingPackage>
+        <NoWarn>2008;NU5105</NoWarn>
+        <NoPackageAnalysis>true</NoPackageAnalysis>
+        <NoDefaultExcludes>true</NoDefaultExcludes>
+        <PackageId>TShock.Plugin.ProjectTemplates</PackageId>
+        <Authors>Xuyuwtu</Authors>
+        <language>en-US</language>
+        <PackageType>Template</PackageType>
+        <SuppressDependenciesWhenPacking>True</SuppressDependenciesWhenPacking>
+        <NoWarn>$(NoWarn);NU1507</NoWarn>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Remove="Microsoft.NETCore.App" />
+        <Content Include="content\**">
+            <PackagePath>content</PackagePath>
+        </Content>
+    </ItemGroup>
+</Project>

@@ -1,0 +1,23 @@
+{
+  "author": "Xuyuwtu",
+  "name": "TShock Plugin",
+  "symbols/TargetFrameworkOverride/description": "Overrides the target framework",
+  "symbols/TargetFrameworkOverride/displayName": "Target framework override",
+  "symbols/Framework/description": "The target framework for the project.",
+  "symbols/Framework/choices/net6.0/description": "Target net6.0",
+  "symbols/Framework/choices/net6.0/displayName": ".NET 6.0",
+  "symbols/Framework/displayName": "Framework",
+  "symbols/skipRestore/description": "If specified, skips the automatic restore of the project on create.",
+  "symbols/skipRestore/displayName": "Skip restore",
+  "symbols/TShockVersion/displayName": "TShock Version",
+  "symbols/GeneratedClassName/displayName": "Generated class name",
+  "symbols/GeneratedClassName/choices/Plugin/displayName": "Plugin",
+  "symbols/GeneratedClassName/choices/ProjectNameLast/displayName": "ProjectNameLast",
+  "symbols/GeneratedClassName/choices/ProjectNameLast/description": "The last one separated by dots.",
+  "symbols/IncludeGitIgnoreFile/displayName": "Include GitIgnore File",
+  "symbols/IncludeGitIgnoreFile/description": "Include a .gitignore file.",
+  "postActions/restore/description": "Restore NuGet packages required by this project.",
+  "postActions/restore/manualInstructions/default/text": "Run 'dotnet restore'",
+  "postActions/open-plugin-file/description": "Opens Plugin.cs in the editor",
+  "postActions/open-regex-plugin-file/description": "Opens plugin class file in the editor"
+}

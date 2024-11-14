@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>for loop npc</Title>
+			<Author>Xuyuwtu</Author>
+			<Shortcut>fornpc</Shortcut>
+		</Header>
+		<Snippet>
+			<References>
+				<Reference>
+					<Assembly>OTAPI.dll</Assembly>
+				</Reference>
+			</References>
+			<Imports>
+				<Import>
+					<Namespace>Terraria</Namespace>
+				</Import>
+			</Imports>
+			<Declarations>
+				<Literal>
+					<ID>LoopVar</ID>
+					<Default>i</Default>
+				</Literal>
+				<Literal>
+					<ID>ObjectVar</ID>
+					<Default>npc</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp" Kind="method body">
+				<![CDATA[for (int $LoopVar$ = 0; $LoopVar$ < Main.maxNPCs; $LoopVar$++)
+				{
+					var $ObjectVar$ = Main.npc[$LoopVar$];
+				}]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>for loop item</Title>
+			<Author>Xuyuwtu</Author>
+			<Shortcut>foritem</Shortcut>
+		</Header>
+		<Snippet>
+			<References>
+				<Reference>
+					<Assembly>OTAPI.dll</Assembly>
+				</Reference>
+			</References>
+			<Imports>
+				<Import>
+					<Namespace>Terraria</Namespace>
+				</Import>
+			</Imports>
+			<Declarations>
+				<Literal>
+					<ID>LoopVar</ID>
+					<Default>i</Default>
+				</Literal>
+				<Literal>
+					<ID>ObjectVar</ID>
+					<Default>item</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp" Kind="method body">
+				<![CDATA[for (int $LoopVar$ = 0; $LoopVar$ < Main.maxItems; $LoopVar$++)
+				{
+					var $ObjectVar$ = Main.item[$LoopVar$];
+				}]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>for loop player</Title>
+			<Author>Xuyuwtu</Author>
+			<Shortcut>forplayer</Shortcut>
+		</Header>
+		<Snippet>
+			<References>
+				<Reference>
+					<Assembly>OTAPI.dll</Assembly>
+				</Reference>
+			</References>
+			<Imports>
+				<Import>
+					<Namespace>Terraria</Namespace>
+				</Import>
+			</Imports>
+			<Declarations>
+				<Literal>
+					<ID>LoopVar</ID>
+					<Default>i</Default>
+				</Literal>
+				<Literal>
+					<ID>ObjectVar</ID>
+					<Default>player</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp" Kind="method body">
+				<![CDATA[for (int $LoopVar$ = 0; $LoopVar$ < Main.maxPlayers; $LoopVar$++)
+				{
+					var $ObjectVar$ = Main.player[$LoopVar$];
+				}]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>for loop chest</Title>
+			<Author>Xuyuwtu</Author>
+			<Shortcut>forchest</Shortcut>
+		</Header>
+		<Snippet>
+			<References>
+				<Reference>
+					<Assembly>OTAPI.dll</Assembly>
+				</Reference>
+			</References>
+			<Imports>
+				<Import>
+					<Namespace>Terraria</Namespace>
+				</Import>
+			</Imports>
+			<Declarations>
+				<Literal>
+					<ID>LoopVar</ID>
+					<Default>i</Default>
+				</Literal>
+				<Literal>
+					<ID>ObjectVar</ID>
+					<Default>chest</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp" Kind="method body">
+				<![CDATA[for (int $LoopVar$ = 0; $LoopVar$ < Main.maxChests; $LoopVar$++)
+				{
+					var $ObjectVar$ = Main.chest[$LoopVar$];
+				}]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>for loop projectile</Title>
+			<Author>Xuyuwtu</Author>
+			<Shortcut>forproj</Shortcut>
+		</Header>
+		<Snippet>
+			<References>
+				<Reference>
+					<Assembly>OTAPI.dll</Assembly>
+				</Reference>
+			</References>
+			<Imports>
+				<Import>
+					<Namespace>Terraria</Namespace>
+				</Import>
+			</Imports>
+			<Declarations>
+				<Literal>
+					<ID>LoopVar</ID>
+					<Default>i</Default>
+				</Literal>
+				<Literal>
+					<ID>ObjectVar</ID>
+					<Default>projectile</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp" Kind="method body">
+				<![CDATA[for (int $LoopVar$ = 0; $LoopVar$ < Main.maxProjectiles; $LoopVar$++)
+				{
+					var $ObjectVar$ = Main.projectile[$LoopVar$];
+				}]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>for loop tile</Title>
+			<Author>Xuyuwtu</Author>
+			<Shortcut>fortile</Shortcut>
+		</Header>
+		<Snippet>
+			<References>
+				<Reference>
+					<Assembly>OTAPI.dll</Assembly>
+				</Reference>
+			</References>
+			<Imports>
+				<Import>
+					<Namespace>Terraria</Namespace>
+				</Import>
+			</Imports>
+			<Declarations>
+				<Literal>
+					<ID>LoopVarX</ID>
+					<Default>x</Default>
+				</Literal>
+				<Literal>
+					<ID>LoopVarY</ID>
+					<Default>y</Default>
+				</Literal>
+				<Literal>
+					<ID>ObjectVar</ID>
+					<Default>tile</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp" Kind="method body">
+				<![CDATA[for (int $LoopVarY$ = 0; $LoopVarY$ < Main.maxTilesY; $LoopVarY$++)
+				{
+					for (int $LoopVarX$ = 0; $LoopVarX$ < Main.maxTilesX; $LoopVarX$++)
+					{
+						var $ObjectVar$ = Main.tile[$LoopVarX$, $LoopVarY$];
+					}
+				}]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
