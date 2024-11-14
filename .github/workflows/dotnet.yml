@@ -21,12 +21,12 @@ jobs:
         dotnet-version: 6.0.x
         
     - name: Pack
-      run: dotnet pack TShock.Plugin.ProjectTemplates/TShock.Plugin.ProjectTemplates.csproj
+      run: dotnet pack TShock.Plugin.ProjectTemplates/
       
     - name: Upload
       uses: actions/upload-artifact@v4.4.3
       with:
         path: |
-          TShock.Plugin.ProjectTemplates/TShock.Plugin.ProjectTemplates.*.nupkg
+          TShock.Plugin.ProjectTemplates/*.nupkg
           CodeSnippet/
     
