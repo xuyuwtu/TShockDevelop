@@ -5,28 +5,30 @@ name: .NET
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ["master"]
   pull_request:
-    branches: [ "master" ]
+    branches: ["master"]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: 6.0.x
-        
-    - name: Pack
-      run: dotnet pack TShock.Plugin.ProjectTemplates/
-      
-    - name: Upload
-      uses: actions/upload-artifact@v4.4.3
-      with:
-        path: |
-          TShock.Plugin.ProjectTemplates/*.nupkg
-          CodeSnippet/
-    
+      - uses: actions/checkout@v4
+        with:
+          submodules: "recursive"
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 6.0.x
+
+      - name: Pack
+        run: dotnet pack TShock.Plugin.ProjectTemplates/
+
+      - name: Upload
+        uses: actions/upload-artifact@v4.4.3
+        with:
+          path: |
+            TShock.Plugin.ProjectTemplates/*.nupkg
+            CodeSnippet/
