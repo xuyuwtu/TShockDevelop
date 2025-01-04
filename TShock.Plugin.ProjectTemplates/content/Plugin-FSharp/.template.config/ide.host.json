@@ -11,7 +11,8 @@
 		{
 			"id": "TShockVersion",
 			"isVisible": true,
-      		"persistenceScope": "shared"
+			"persistenceScope": "shared",
+			"defaultValue": "5.2.1"
 		},
 		{
 			"id": "GeneratedClassName",

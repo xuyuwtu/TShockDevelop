@@ -8,7 +8,7 @@
 git clone https://github.com/xuyuwtu/TShockDevelop.git
 dotnet pack TShock.Plugin.ProjectTemplates/
 ```
-也可以去去Actions下载
+也可以去Actions下载
 #### 使用
 ```
 dotnet new install TShock.Plugin.ProjectTemplates.1.0.0.nupkg

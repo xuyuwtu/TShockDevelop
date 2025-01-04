@@ -54,10 +54,13 @@
             "datatype": "choice",
             "choices": [
                 {
+                    "choice": "5.2.1"
+                },
+                {
                     "choice": "5.2.0"
                 }
             ],
-            "defaultValue": "5.2.0",
+            "defaultValue": "5.2.1",
             "replaces": "$(TShockVersion)",
             "displayName": "TShock Version"
         },
