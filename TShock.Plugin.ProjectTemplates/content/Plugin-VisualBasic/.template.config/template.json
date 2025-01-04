@@ -67,7 +67,7 @@
         "pluginName": {
             "type": "derived",
             "valueSource": "name",
-            "valueTransform": "title",
+            "valueTransform": "none",
             "fileRename": "PluginProject",
             "replaces": "Plugin.Namespace"
         },
@@ -104,17 +104,64 @@
             "fileRename": "RegexPluginClass",
             "replaces": "Plugin.ClassName"
         },
+        "Author": {
+            "type": "parameter",
+            "datatype": "text",
+            "defaultValue": "None"
+        },
+        "pluginAuthor": {
+            "type": "generated",
+            "generator": "regex",
+            "datatype": "text",
+            "parameters": {
+                "source": "Author",
+                "steps": [
+                    {
+                        "regex": "\"",
+                        "replacement": ""
+                    }
+                ]
+            },
+            "replaces": "Plugin.Author"
+        },
+        "Description": {
+            "type": "parameter",
+            "datatype": "text",
+            "defaultValue": "None"
+        },
+        "pluginDescription": {
+            "type": "generated",
+            "generator": "regex",
+            "datatype": "text",
+            "parameters": {
+                "source": "Description",
+                "steps": [
+                    {
+                        "regex": "\"",
+                        "replacement": ""
+                    }
+                ]
+            },
+            "replaces": "Plugin.Description"
+        },
         "IncludeGitIgnoreFile": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
             "displayName": "Include GitIgnore File",
             "description": "Include a .gitignore file."
+        },
+        "HostIdentifier": {
+            "type": "bind",
+            "binding": "host:HostIdentifier",
+            "replaces": "HostIdentifier"
         }
     },
     "forms": {
-        "title": {
-            "identifier": "titleCase"
+        "none": {
+            "identifier": "replace",
+            "pattern": "^$",
+            "replacement": "MyPlugin"
         }
     },
     "sources": [
@@ -150,11 +197,11 @@
             "path": "PluginProject.vbproj"
         },
         {
-            "condition": "(GeneratedClassName == 'Plugin')",
+            "condition": "(HostIdentifier != \"dotnetcli\" && GeneratedClassName == \"Plugin\")",
             "path": "PluginClass.vb"
         },
         {
-            "condition": "(GeneratedClassName == 'ProjectNameLast')",
+            "condition": "(HostIdentifier != \"dotnetcli\" && GeneratedClassName == \"ProjectNameLast\")",
             "path": "RegexPluginClass.vb"
         }
     ],
@@ -174,9 +221,13 @@
         },
         {
             "id": "open-plugin-file",
-            "condition": "(GeneratedClassName == 'Plugin')",
+            "condition": "(HostIdentifier != \"dotnetcli\" && GeneratedClassName == \"Plugin\")",
             "description": "Opens Plugin.vb in the editor",
-            "manualInstructions": [],
+            "manualInstructions": [
+                {
+                    "text": "Open 'Plugin.vb'"
+                }
+            ],
             "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
             "args": {
                 "files": "1"
@@ -185,9 +236,13 @@
         },
         {
             "id": "open-regex-plugin-file",
-            "condition": "(GeneratedClassName == 'ProjectNameLast')",
+            "condition": "(HostIdentifier != \"dotnetcli\" && GeneratedClassName == \"ProjectNameLast\")",
             "description": "Opens plugin class file in the editor",
-            "manualInstructions": [],
+            "manualInstructions": [
+                {
+                    "text": "Open plugin class file"
+                }
+            ],
             "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
             "args": {
                 "files": "1"

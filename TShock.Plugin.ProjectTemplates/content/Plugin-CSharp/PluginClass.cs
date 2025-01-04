@@ -7,8 +7,8 @@ namespace Plugin.Namespace;
 public class Plugin : TerrariaPlugin
 {
     public override string Name => "Plugin.Namespace";
-    public override string Author => base.Author;
-    public override string Description => base.Description;
+    public override string Author => "Plugin.Author";
+    public override string Description => "Plugin.Description";
     public override Version Version => new Version(1, 0);
     public Plugin(Main game) : base(game)
     {

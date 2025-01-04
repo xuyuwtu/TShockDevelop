@@ -5,8 +5,8 @@ Imports TerrariaApi.Server
 Public Class Plugin 
     Inherits TerrariaPlugin
     Public Overrides ReadOnly Property Name As String = "Plugin.Namespace"
-    Public Overrides ReadOnly Property Author As String = MyBase.Author
-    Public Overrides ReadOnly Property Description As String = MyBase.Description
+    Public Overrides ReadOnly Property Author As String = "Plugin.Author"
+    Public Overrides ReadOnly Property Description As String = "Plugin.Description"
     Public Overrides ReadOnly Property Version As Version = New Version(1, 0)
 
     Public Sub New(game As Main)

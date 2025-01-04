@@ -9,8 +9,8 @@ open TerrariaApi.Server
     inherit TerrariaPlugin
     new (game) = { inherit TerrariaPlugin(game) }
     override _.Name = "Plugin.Namespace"
-    override _.Author = base.Author
-    override _.Description = base.Description
+    override _.Author = "Plugin.Author"
+    override _.Description = "Plugin.Description"
     override _.Version = new Version(1, 0)
         
     override _.Initialize() = ()

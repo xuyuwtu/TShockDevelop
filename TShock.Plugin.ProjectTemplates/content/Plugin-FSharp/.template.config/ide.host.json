@@ -17,12 +17,24 @@
 		{
 			"id": "GeneratedClassName",
 			"isVisible": true,
-      		"persistenceScope": "shared"
+			"persistenceScope": "shared"
+		},
+		{
+			"id": "Author",
+			"isVisible": true,
+			"persistenceScope": "shared",
+			"defaultValue": "None"
+		},
+		{
+			"id": "Description",
+			"isVisible": true,
+			"persistenceScope": "none",
+			"defaultValue": "None"
 		},
 		{
 			"id": "IncludeGitIgnoreFile",
 			"isVisible": true,
-      		"persistenceScope": "shared"
+			"persistenceScope": "shared"
 		}
 	]
 }
