@@ -15,17 +15,25 @@
         <NoPackageAnalysis>true</NoPackageAnalysis>
         <NoDefaultExcludes>true</NoDefaultExcludes>
         <PackageId>TShock.Plugin.ProjectTemplates</PackageId>
+        <PackageType>Template</PackageType>
+		<PackageTags>templates</PackageTags>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<Description>Simple Project Templates for TShock</Description>
         <Authors>Xuyuwtu</Authors>
         <language>en-US</language>
-        <PackageType>Template</PackageType>
         <SuppressDependenciesWhenPacking>True</SuppressDependenciesWhenPacking>
         <NoWarn>$(NoWarn);NU1507</NoWarn>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<RepositoryUrl>https://github.com/xuyuwtu/TShockDevelop</RepositoryUrl>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
     </PropertyGroup>
     <ItemGroup>
         <PackageReference Remove="Microsoft.NETCore.App" />
         <Content Include="content\**">
             <PackagePath>content</PackagePath>
         </Content>
+		<Content Include="README.md">
+			<PackagePath>\</PackagePath>
+		</Content>
     </ItemGroup>
 </Project>
