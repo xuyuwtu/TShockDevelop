@@ -12,7 +12,7 @@
 			"id": "TShockVersion",
 			"isVisible": true,
 			"persistenceScope": "shared",
-			"defaultValue": "6.0.0"
+			"defaultValue": "6.1.0"
 		},
 		{
 			"id": "GeneratedClassName",
